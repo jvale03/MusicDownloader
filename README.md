@@ -15,4 +15,4 @@ r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])\([a-z]\)',
 
 in the `function_patterns` variable of the `get_throttling_function_name` method in the `cipher.py` file.
 
-Use the following link to extract links from a YouTube playlist: `https://cable.ayra.ch/ytdl/playlist.php`
+Use the following link to extract links from a YouTube playlist: [YouTube URL Extractor](`https://cable.ayra.ch/ytdl/playlist.php`)
