@@ -52,6 +52,11 @@ def download_audio(url, d_type):
                 print(f"\033[31mError executing command: {e.stderr.decode()}.\033[m")
                 return
 
+        try:
+            os.remove(input_command)
+        except Exception as e:
+            print(f"\033[31mError deleting file:  {str(e)}\033[m")
+
         print(f"\033[1mDownloaded:\033[m {audio_name[-1]}")
 
     except Exception as e:
