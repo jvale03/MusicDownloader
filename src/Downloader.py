@@ -145,35 +145,37 @@ def defining_audio_quality():
 
 
 def main():
-    choice = 0
-    while True:
-        choice = input("1: Download one audio\n2: Download multiple audios\nInput: ")
-        if choice.isdigit():
-            choice = int(choice)
-            if choice > 2 or choice < 1:
-                print("\033[31mInvalid!\033[m")
+    try:
+        choice = 0
+        while True:
+            choice = input("1: Download one audio\n2: Download multiple audios\nInput: ")
+            if choice.isdigit():
+                choice = int(choice)
+                if choice > 2 or choice < 1:
+                    print("\033[31mInvalid!\033[m")
+                else:
+                    break
             else:
-                break
-        else:
-            print("\033[31mInvalid!\033[m")
-    final_time = 0
-    if choice == 1:
-        print("---------------")
-        url = input("Enter here your URL: ")
-        print("---------------")
-        initial_time = time.time()
-        download_audio(url,0)
-        final_time = time.time() - initial_time
-        print("---------------")
-        print(f"It took {round(final_time,1)} seconds!")
-    elif choice == 2:
-        print("---------------")
-        defining_audio_quality()
-        print("---------------")
-        final_time = defining_path()
-        print("---------------")
-        print(f"It took {round(final_time/60,2)} minutes!")
-
+                print("\033[31mInvalid!\033[m")
+        final_time = 0
+        if choice == 1:
+            print("---------------")
+            url = input("Enter here your URL: ")
+            print("---------------")
+            initial_time = time.time()
+            download_audio(url,0)
+            final_time = time.time() - initial_time
+            print("---------------")
+            print(f"It took {round(final_time,1)} seconds!")
+        elif choice == 2:
+            print("---------------")
+            defining_audio_quality()
+            print("---------------")
+            final_time = defining_path()
+            print("---------------")
+            print(f"It took {round(final_time/60,2)} minutes!")
+    except:
+        print("\033[31mStoping...\033[m")
         
 
 main()
